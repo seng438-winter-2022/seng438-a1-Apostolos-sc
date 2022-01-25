@@ -2,10 +2,10 @@
 
 **Lab. Report \#1 – Introduction to Testing and Defect Tracking**
 
-| Group \#:       |   |
+| Group \#: 3      |   |
 |-----------------|---|
 | Student Names:  |   |
-|                 |   |
+|  Haniya Ahmed   |   |
 |                 |   |
 |                 |   |
 
