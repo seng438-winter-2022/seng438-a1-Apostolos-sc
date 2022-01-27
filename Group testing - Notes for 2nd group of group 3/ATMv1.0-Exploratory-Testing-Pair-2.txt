@@ -1,0 +1,297 @@
+Pair Testing :
+
+Apostolos Scondrianis
+Beau McCartney
+
+ATM v1.0 
+Accounts :
+Card # - Pin   - Accounts Accessed
+1      - 42    - Checking & Savings
+2      - 1234  - Checking & Money Market
+
+Note : Both accounts access same checking account
+
+Checking : 100$
+Savings  : 1000$
+Market   : 5000$
+
+Simulation # 1:
+ATM starts with 10 x 20 $ bills = 200$
+
+Exploratory testing plan :
+
+Our plan is to initially test if we are able to access our banking account using both card #s. We will attempt to insert invalid and
+valid credentials and observe how the system reacts. We will then test a deposit, to see
+if the money will be deposited properly. We will do that on all 3 types of account, Checking, Savings, Money Market,
+check the balances of the accounts, and see if they match. For the checking account, we wwill check and see if when deposits or withdrawals are made on one card, if they show up
+on both cards, ie check to see if actually both cards connect to the same checking account. Then we will test each transaction type,
+Withdrawal, Deposit, Transfer, Balance Inquiry. In between, of each transaction we will ask for a balance, retrieve card, and reinsert
+and see if the balances match the expected result. We will also, check to see if we attempt to withdraw more money than the atm holds,
+what the result will be. We will test and see if the logs match the transactions.
+
+Test #1 : (card 1)
+Login in first card with #1, Password 42
+Expected Result : Successful Login
+Actual          : Successful Login
+Test Status     : Pass
+Regression Stat : 
+
+Test #2 : (Card 1)
+Request balance inquiry for checking account
+Expected Result : Show 100$ Balance in Checking account
+Actual Result   : Shows 100$ Balance in Checking account
+Test Status     : Pass
+Regression Stat :
+
+Test #3 : (Card 1)
+Selected #4 Option Balance inquiry
+Expected Result : Show checking + Savings
+Actual Result   : Shows checking + Money Market options
+Test Status     : Fail
+Regression Stat :
+
+Test #4 : (Card 1)
+Select Money Market Option
+Expected Result : Error, because it's not a valid account for card 1
+Actual Result   : Unknown Error
+Test            : Pass
+Regression Stat : 
+
+Test #5 : (Card 1)
+Withdrawal of 20$ from checking account, while card 1 is logged in.
+Expected result : balance 80$ after withdrawal
+Actual Result   : We are unable to withdraw insufficient funds.
+Test Status     : Fail
+Regression Stat :
+
+Test #6 : (Card 1)
+Withdrawal of 100$ from savings account, while card 1 is logged in.
+Expected result : successful withdrawal and balace of 900$
+Actual result   : Unable to withdraw insufficient cash available
+Test Status     : Fail
+Note : Observation looks like balance inquiry for Money Market in card 1
+       updates the money available in the ATM.
+Regression Stat :
+
+Test #7 : (Card 1)
+Deposit 20$ into checking account. (Card 1)
+Expected Result : Deposit 20$ balance updated to 120$, 100$ balanced available.
+Actual   Result : Account shows that checking now holds 110$, with 100$ available.
+Test Status     : Fail
+Regression Stat : 
+
+Test #8 : (Card 1)
+Deposit 100$ into Money Mart 
+Expected Result : Not able to access money mart through card 1.
+Actual Result   : Invalid type account.
+Test Status     : Pass
+Regression Stat : 
+
+Test #9 : (Card 1)
+Deposit 100$ into savings account
+Expected Result : Current Balace 1100$, Available $1000
+Actual Result   : Current Balance 1090$, Available $1000
+Test Status     : Fail
+Regression Stat : 
+
+Test #10 : (Card 1)
+Transfer from Savings account to checking account 1090$, when 1000$ available.
+Expected Result : Insufficient Available Funds.
+Actual Result   : Insufficient Available Funds.
+Test Status     : Pass
+Regression Stat : 
+
+Test #11 : (Card 1)
+Transfer 100 $ from Savings account to checking account, when Savings has 1000$ available, and 1090$ in total savings and Cheking has 110 and 100$ available.
+Expected Result : Successful transfer 100$ in checking 800$ avaible in savings, and 890$ total savings.
+Actual Result   : Transfer of 99.50$ from savings to checking account. Balances follow the 99.5$ transfer properly.
+Test Status     : Fail.
+Regression Stat : 
+
+Test #12 : (Card 2)
+Login with card 2 using 1234 Password
+Expected Result : Successful login
+Actual Result   : Successful login
+Test Status     : Pass
+Regression Stat : 
+
+Test # 13: (Card 2)
+Balance Inquiry for Money Market
+Expected Result : Balance of Money market 5000$
+Actual Result   : Invalid Account Type
+Test Status     : Fail
+Regression Stat : 
+
+Test #14 : (Card 2)
+Balance Inquire for Checking Account. When card 1 was removed the the total balance was 209.5
+And available balance was 199.5$
+Expected Result : Available Balance 199.5$ and total balance 209.5$
+Actual Result   : Available Balance 199.5$ and total balance 209.5$
+Test Status     : Pass
+Regression Stat : 
+
+Test #15 : (Card 2)
+Withdrawal from checking account of 100$.
+Expected Result : Available Balance 99.5$ and Total Balance 109.5
+Actual Result   : Insufficient cash available balance.
+Test Status     : Pass
+Regression Stat : 
+
+Simulation #2 :
+ATM starts with 10 x 20 $ bills = 200$
+
+Test #16 : (Card 2)
+Withdrawal from Money Market account of 20$. Initial balance 5000$/5000$
+Expected Result : Total Balance/Available balance : 4980$/4980$
+Actual Result   : Total Balance/Available Balance : 4960$/4960$, 40$ withdrawed
+Test Status     : Fail
+Regression Stat : 
+
+Test #17 : (Card 2)
+Withdrawal from Money Market account of 40$. Initial balance 4960$/4960$
+Expected Result : Total Balance/Available balance : 4900$/4900$
+Actual Result   : Total Balance/Available Balance : 4920$/4920$, 60$ withdrawed
+Test Status     : Fail
+Regression Stat : 
+
+Test #18 : (Card 2)
+Withdrawal from Money Market account of 60$. Initial balance 4900$/4900$
+Expected Result : Total Balance/Available balance : 4840$/4840$
+Actual Result   : Total Balance/Available Balance : 4800$/4800$, 100$ withdrawed
+Test Status     : Fail
+Regression Stat : 
+
+Test #19 : (Card 2)
+Withdrawal from Money Market account of 100$. Initial balance 4900$/4900$
+Expected Result : Insufficient cash available (200$ withdrawed already, we started the app with 200$ available in the ATM)
+Actual Result   : Insufficient cash availablee
+Test Status     : Pass
+Regression Stat : 
+
+-- Shut off App and relaunch to test other withdrawal options --
+
+Simulation # 3:
+ATM starts with 300 x 20 $ bills = 6000$
+
+Test #19 : (Card 2)
+Withdrawal from Money Market account of 100$. Initial balance 5000/5000
+Expected Result : Total Balance/Available balance : 4900/4900
+Actual Result   : Total Balance/Available Balance : 4800/4800 200$ withdrawed instead
+Test Status     : Fail
+Regression Stat : 
+
+Test #20 : (Card 2)
+Withdrawal from Money Market account of 200$. Initial balance 4800/4800
+Expected Result : Total Balance/Available balance : 4600/4600
+Actual Result   : Total Balance/Available Balance : 4780/4780 20$ withdrawed instead
+Test Status     : Fail
+
+Test #23 : (Card 2)
+Transfer from Market Place 500$ to Cheking Account. Market Initial Balance 4780/4780. 
+Expected Result  : Money Market Balance 4280/4280, Cheking account balance 600 Total, 100 Available
+Actual   Result  : Transfer of 49.50$ instead of 50$. Cheking balance now shows as 599.50$ and Money Market balance is 19.50$
+Test Status      : Fail
+
+Version 1.0 Manual Scripted Testing :
+
+Test Cases : 
+#  1 : Pass
+#  2 : Pass
+#  3 : Pass (login/inquiry about checking balance)
+#  4 : Pass (eject card/press off -> system shuts down)
+#  5 : Pass (On -> Insert Card -> 1 -> system asks for pin)
+#  6 : Pass (-7 tested )
+#  7 : Pass ( Card 1 , Pass 42)
+#  8 : Pass ( Withdrawal, Inquiry, Deposit, Transfer)
+#  9 : Pass ( Withdrawal, Deposit, Transfer, Inquiry)
+# 10 : Pass ( Withdrawal, Deposit, Transfer, Inquiry)
+# 11 : Pass
+# 12 : Pass
+# 13 : Pass
+# 14 : Fail - Chose 20, 40 was dispensed, 40 is showed on receipt, balance is updated correctly
+       according to the amount dispensed 100-40 = 60, Log records 40 as dispensed, 
+# 15 : Pass (system started with 4 x 20, attempt of 100$ withdrawal -> Insufficient cash
+       to withdraw
+# 16 : Pass (Balance 0 -> asking to withdraw 20 $ -> insufficient balance
+# 17 : Pass 
+# 18 : Pass
+# 19 : Pass
+# 20 : Pass
+# 21 : Pass
+# 22 : Fail Log correct -> Amount presented correct -> Total balance is 10$ less than the inputted
+       amount. 4000.75 $ used in this case 3990.75 deposited in an empty checking account. 
+# 23 : Pass 
+# 24 : Pass (works for all 3 types of accounts)
+# 25 : Pass
+# 26 : Pass
+# 27 : Pass
+# 28 : Pass
+# 29 : Fail (40 chosen, 39.5$ transferred to savings, balanced in savings updated
+       from 1000$ to 1039.5, log shows transfer of 39.5$. Checking balance shows 60.5$
+       when it was 100$ before transaction
+# 30 : Pass
+# 31 : Pass (Transfer-> Tested all 3 options available)
+# 32 : Pass (Transfer -> From -> To -> $ amount, all 9 possible paths work)
+# 33 : Fail Menu shows up, wrong accounts are shown (Checking, Money Market)
+       instead of (Checking, Savings). Using Card 1 (1, 42)
+# 34 : Pass ( 60.5$ in account, before inquiry, amount shown properly, inquiry
+       log shown.
+# 35 : Pass
+# 36 : Pass ?? Ambiguous description ( We aren't allowed to do any transactions if we insert a wrong pin)
+# 37 : Fail (look at #36 test, not allowed to do any transactions with incorrect pin)
+# 38 : Pass (if pin is given wrong 3 times system asks again for PIN re-entry)
+# 39 : Fail ( look at 36-37, this sequence is not possible)
+# 40 : Fail ( 36-37-38-39 sequences explain this)
+
+Regression Testing :
+
+Manual Script Testing v1.1 : 
+
+Test Cases : 
+#  1 : Pass
+#  2 : Pass
+#  3 : Pass (login/inquiry about checking balance)
+#  4 : Pass (eject card/press off -> system shuts down)
+#  5 : Pass (On -> Insert Card -> 1 -> system asks for pin)
+#  6 : Pass (-7 tested )
+#  7 : Pass ( Card 1 , Pass 42)
+#  8 : Pass ( Withdrawal, Inquiry, Deposit, Transfer)
+#  9 : Pass ( Withdrawal, Deposit, Transfer, Inquiry)
+# 10 : Pass ( Withdrawal, Deposit, Transfer, Inquiry)
+# 11 : Pass
+# 12 : Pass
+# 13 : Pass
+# 14 : Fail - Chose 20, 40 was dispensed, 40 is showed on receipt, balance is updated correctly
+       according to the amount dispensed 100-40 = 60, Log records 40 as dispensed, 
+# 15 : Pass (system started with 4 x 20, attempt of 100$ withdrawal -> Insufficient cash
+       to withdraw
+# 16 : Pass (Balance 0 -> asking to withdraw 20 $ -> insufficient balance
+# 17 : Pass 
+# 18 : Pass
+# 19 : Pass
+# 20 : Pass
+# 21 : Pass
+# 22 : Fail Log correct -> Amount presented correct -> Total balance is 10$ less than the inputted
+       amount. 4000.75 $ used in this case 3990.75 deposited in an empty checking account. 
+# 23 : Pass 
+# 24 : Pass (works for all 3 types of accounts)
+# 25 : Pass
+# 26 : Pass
+# 27 : Pass
+# 28 : Pass
+# 29 : Fail (40 chosen, 39.5$ transferred to savings, balanced in savings updated
+       from 1000$ to 1039.5, log shows transfer of 39.5$. Checking balance shows 60.5$
+       when it was 100$ before transaction
+# 30 : Pass
+# 31 : Pass (Transfer-> Tested all 3 options available)
+# 32 : Pass (Transfer -> From -> To -> $ amount, all 9 possible paths work)
+# 33 : Fail Menu shows up, wrong accounts are shown (Checking, Money Market)
+       instead of (Checking, Savings). Using Card 1 (1, 42)
+# 34 : Pass ( 60.5$ in account, before inquiry, amount shown properly, inquiry
+       log shown.
+# 35 : Pass
+# 36 : Pass ?? Ambiguous description ( We aren't allowed to do any transactions if we insert a wrong pin)
+# 37 : Fail (look at #36 test, not allowed to do any transactions with incorrect pin)
+# 38 : Pass (if pin is given wrong 3 times system asks again for PIN re-entry)
+# 39 : Fail ( look at 36-37, this sequence is not possible)
+# 40 : Fail ( 36-37-38-39 sequences explain this)
