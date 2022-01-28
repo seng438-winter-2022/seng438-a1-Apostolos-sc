@@ -70,6 +70,9 @@ We did not encounter many difficulties when coming together, it allowed us to be
 # Comments/feedback on the lab and lab document itself
  
 Josh: The lab was well designed and linear in its completion, however the formatting of the lab document resulted in some minor confusion for myself as to the expectations of exploratory testing. 
+
 Haniya: It was interesting operating with a software product designed by someone else to specifically test for defects. I definitely think that the lab document could have been a little bit less ambiguous to save a lot of time spent on figuring out details, but I hope the lessons learned from this lab can be applied to the next.
+
 Apostolos: The lab was a bit unambiguous at some points and it would have been nicer to see the tests for manual scripting appear in the section where we are asked to perform the manual test scripting instead of the references. Maybe for the demo next time we can have the TA create zoom breakout sessions that are self assigned and have the title of our groups, that way if we crash we are able to rejoin without the TA having to accept us into the meeting and without having another 20 students listening to our demo which was pretty stressful.
+
 Beau: The last few test cases were literally impossible to carry out, because you can’t attempt transactions until you enter the correct pin for the card. For the demonstration, the document stated each group member stated one failing and one successful test case. There was no mention of the TA asking for specific scenarios, or choosing the tests we demo. If we’re going to be interviewed, please state so in the future.
