@@ -30,6 +30,7 @@ and see if the balances match the expected result. We will also, check to see if
 what the result will be. We will test and see if the logs match the transactions.
 
 Note : It's important to note we performed these tests in succession, and also, the regression was performed in the same order.
+Regression tests were also added here to make it more simple to follow and the tests were performed in succession as well.
 
 Test #1 : (card 1)
 Login in first card with #1, Password 42
