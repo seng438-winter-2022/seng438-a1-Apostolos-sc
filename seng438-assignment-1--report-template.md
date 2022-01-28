@@ -33,7 +33,10 @@ The objective of this lab focuses on four main goals: familiarizing ourselves wi
 
 Prior to this lab, our group had only the introductory knowledge of the three different testing types introduced in this lab and no prior industrial experience. The lab allowed practical application of all our understandings while also allowing us an opportunity to experience BackLog and all its uses in defect tracking. 
 
-# High-level description of the exploratory testing planGroup 1:
+# High-level description of the exploratory testing plan
+
+Group 1:
+
 The outline for high level requirements provides an extensive list of properties that this system must contain. These range from simple transaction methods to pseudo-confirmations with the bank's internal systems. To explore this program and test its functionality, we will begin by conducting tests that we would regularly do when interacting with a real ATM. In doing so, the functionality that is required by consumers will be tested thoroughly. Some of these tests will include: 
 Withdrawals from all account types
 Deposits to all account types
