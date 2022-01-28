@@ -59,13 +59,17 @@ Exploratory testing is a software testing technique performed without prior plan
 Once the pairs had completed their respective testing sessions, our group came together to combine the results. Using a Google Doc we wrote in all of the bugs we had found and removed the duplicates, then one member from each pairing entered the information into Backlog to create our final results. 
  
 # How the pair testing was managed and team work/effort was divided 
+
 For Josh and Haniya’s group, we divided the work by alternating through the manual test cases. Haniya took the last 20 test cases, and Josh took the first 20, and then the other would spend time making notes about any defects noticed. Then we spent over 30 minutes making a generic plan of our exploratory testing by revisiting the requirements of the software program, and then testing for errors together with one person sharing the screen. 
+
 For Apostolos and Beau…
 As a group, we had a few meetings and came with a plan on how to attempt to perform exploratory testing on the software provided to us. We came with 23 tests for our exploratory testing plan. Apostolos took care of the initial testing phase performing the 23 exploratory tests and Beau performed the regression testing on all 23 exploratory tests and 40 tests suggested by the manual script testing suite provided to us. Furthermore, we saved our results into a text file which we shared with Josh and Haniya’s group. Then Josh and Haniya took care of the backlog inputting. We looked over at the backlog and entries that Haniya and Josh inputted after looking at our test results and their test results, and together with beau we did some editing on the entries themselves. Then we worked together on the report and filled out what we could.
 # Difficulties encountered, challenges overcome, and lessons learned
  
 In pairs:
+
 Haniya and Josh: This assignment definitely allowed us to spend the time overcoming the learning curve of working together and working with BackLog. Josh spent time testing the test cases on version 1.0 and I spent time writing details about defects. However, I didn’t write directly into the BackLog as we went which added extra time overcoming the learning curve of working with BackLog and further extended the amount of time spent on completing the defect report. 
+
 Apostolos and Beau : This assignment hac a few challenges. First one was understanding the assignment document that was given to us. It was lengthy and the exploratory testing took us more than 30 minutes. In addition getting familiar with the backlog was challenging and we realized during the demo that the TA would have liked all of us to have created entries in the backlog software. Next time we will make sure to have a single meeting where we explain to each other what was added and why in the backlog and get everyone to add some entries in it. In addition, we figure that we need to be more concise and follow the same system when creating a new entry in the backlog and when performing testing and logging our results.. This will help us be more organized, communicate effectively with the rest of the team and complete the next assignment using a better workflow.
  
 Together: 
