@@ -288,7 +288,7 @@ Test Cases :
 #  3 : Pass (login/inquiry about checking balance)
 #  4 : Pass (eject card/press off -> system shuts down)
 #  5 : Pass (On -> Insert Card -> 1 -> system asks for pin)
-#  6 : Pass (-7 tested )
+#  6 : Pass (-7 tested)
 #  7 : Pass ( Card 1 , Pass 42)
 #  8 : Pass ( Withdrawal, Inquiry, Deposit, Transfer)
 #  9 : Pass ( Withdrawal, Deposit, Transfer, Inquiry)
@@ -296,8 +296,7 @@ Test Cases :
 # 11 : Pass
 # 12 : Pass
 # 13 : Pass
-# 14 : Fail - Chose 20, 40 was dispensed, 40 is showed on receipt, balance is updated correctly
-       according to the amount dispensed 100-40 = 60, Log records 40 as dispensed, 
+# 14 : Fail - Correct amount dispensed, balance is updated correctly, log shows incorrect card number (card #2 when tested with card #1)
 # 15 : Pass (system started with 4 x 20, attempt of 100$ withdrawal -> Insufficient cash
        to withdraw
 # 16 : Pass (Balance 0 -> asking to withdraw 20 $ -> insufficient balance
@@ -306,23 +305,21 @@ Test Cases :
 # 19 : Pass
 # 20 : Pass
 # 21 : Pass
-# 22 : Fail Log correct -> Amount presented correct -> Total balance is 10$ less than the inputted
-       amount. 4000.75 $ used in this case 3990.75 deposited in an empty checking account. 
+# 22 : Fail: Correct deposit amount, incorrect card number, correct account, balance increments by 19.90 instead of the 20 I attempted to deposit
 # 23 : Pass 
 # 24 : Pass (works for all 3 types of accounts)
 # 25 : Pass
 # 26 : Pass
 # 27 : Pass
 # 28 : Pass
-# 29 : Fail (40 chosen, 39.5$ transferred to savings, balanced in savings updated
-       from 1000$ to 1039.5, log shows transfer of 39.5$. Checking balance shows 60.5$
-       when it was 100$ before transaction
+# 29 : Fail: Shows wrong card, shows account that was transferred from as transferred to
+    and shows account that was transferred to as transferred from. Everything else is correct
 # 30 : Pass
 # 31 : Pass (Transfer-> Tested all 3 options available)
 # 32 : Pass (Transfer -> From -> To -> $ amount, all 9 possible paths work)
 # 33 : Fail Menu shows up, wrong accounts are shown (Checking, Money Market)
        instead of (Checking, Savings). Using Card 1 (1, 42)
-# 34 : Pass ( 60.5$ in account, before inquiry, amount shown properly, inquiry
+# 34 : Fail: incorrect card number shown in receipt. Everything else is correct
        log shown.
 # 35 : Pass
 # 36 : Pass ?? Ambiguous description ( We aren't allowed to do any transactions if we insert a wrong pin)
