@@ -1,14 +1,14 @@
-   **SENG 438 - Software Testing, Reliability, and Quality**
+    **SENG 438 - Software Testing, Reliability, and Quality**
  
 **Lab. Report \#1 – Introduction to Testing and Defect Tracking**
  
 | Group \#: 3                        |   |
 |------------------------------------|---|
-| Student Names:                 |   |
-|  Haniya Ahmed                  |   |
-|   Apostolos Scondrianis     |   |
-|  Beau McCartney               |   |
-|  Josh Vanderstoop             |   |
+| Student Names:                     |   |
+|  Haniya Ahmed                      |   |
+|  Apostolos Scondrianis             |   |
+|  Beau McCartney                    |   |
+|  Josh Vanderstoop                  |   |
  
 **Table of Contents**
  
